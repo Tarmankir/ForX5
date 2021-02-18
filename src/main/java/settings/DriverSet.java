@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 public abstract class DriverSet {
 
     @BeforeMethod
-    public void driverSet() {
+    public void beforeClass() {
         ChromeDriverManager.firefoxdriver().setup();
    }
 }
