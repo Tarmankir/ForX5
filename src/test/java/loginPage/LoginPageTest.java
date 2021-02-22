@@ -17,6 +17,7 @@ public class LoginPageTest extends DriverSet {
     //todo add mvn site
     //todo add gitignore
     //todo new branch on every task
+    //todo user ElementCollections in tests
     private WebDriver driver;
     private LoginPage loginPage;
 
