@@ -10,6 +10,7 @@ public class LoginPage {
 
     private WebDriver driver;
 
+    //todo constructor after fields
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -40,6 +41,7 @@ public class LoginPage {
         button.click();
     }
 
+    //todo move up
     @FindBy(css = "a[title='Выход [ IVakidov ]']")
     private WebElement buttonExit;
 

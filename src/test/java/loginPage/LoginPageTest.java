@@ -19,8 +19,8 @@ public class LoginPageTest extends DriverSet {
     @BeforeMethod
     public void driverSet() {
         driver = new FirefoxDriver();
-        driver.get("https://forum.awd.ru/ucp.php?mode=login&redirect=.%2Findex.php");
         loginPage = initElements(driver, LoginPage.class);
+        driver.get("https://forum.awd.ru/ucp.php?mode=login&redirect=.%2Findex.php");
     }
 
     @Test
@@ -30,6 +30,7 @@ public class LoginPageTest extends DriverSet {
         loginPage.checkButtonExit("Выход [ IVakidov ]");
     }
 
+    //todo afterMethod after beforeMethod
     @AfterMethod
     void afterMethod() {
         driver.close();
