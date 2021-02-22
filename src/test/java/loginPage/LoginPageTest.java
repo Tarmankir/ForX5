@@ -14,6 +14,9 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 public class LoginPageTest extends DriverSet {
 
     //todo add config.properties file
+    //todo add mvn site
+    //todo add gitignore
+    //todo new branch on every task
     private WebDriver driver;
     private LoginPage loginPage;
 
