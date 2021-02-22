@@ -13,6 +13,7 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 
 public class LoginPageTest extends DriverSet {
 
+    //todo add config.properties file
     private WebDriver driver;
     private LoginPage loginPage;
 
@@ -23,6 +24,7 @@ public class LoginPageTest extends DriverSet {
         driver.get("https://forum.awd.ru/ucp.php?mode=login&redirect=.%2Findex.php");
     }
 
+    //todo add static import
     @Test
     public void loginPageTest() {
         loginPage.loginIn(Credentials.TEST1);
