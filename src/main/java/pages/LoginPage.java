@@ -1,6 +1,8 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import enums.Credentials;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +12,7 @@ public class LoginPage {
 
     private WebDriver driver;
 
+    //todo constructor after fields
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -23,6 +26,10 @@ public class LoginPage {
     @FindBy(css = ".button1")
     private WebElement button;
 
+    @FindBy(css = "")
+    private ElementsCollection language;
+
+    @Step("Login in application")
     public void loginIn(Credentials creds) {
         typeLogin(creds.login);
         typePass(creds.pass);
@@ -36,15 +43,16 @@ public class LoginPage {
         passen.sendKeys(pass);
     }
 
+    @Step("Click on the Login button")
     public void clickLogin(){
         button.click();
     }
 
+    //todo move up
     @FindBy(css = "a[title='Выход [ IVakidov ]']")
     private WebElement buttonExit;
 
     public void checkButtonExit(String text) {
         Assert.assertEquals(buttonExit.getText(), text);
     }
-
 }

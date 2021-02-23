@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideUse {
 
+    //todo why test in main/java? move to src/test
     @Test
     void selenideUse() {
         open("https://forum.awd.ru/");
