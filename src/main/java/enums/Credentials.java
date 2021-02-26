@@ -11,5 +11,4 @@ public enum Credentials {
         this.login = login;
         this.pass = pass;
     }
-
 }

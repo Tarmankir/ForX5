@@ -8,14 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static org.testng.Assert.assertEquals;
+
 public class LoginPage {
-
-    private WebDriver driver;
-
-    //todo constructor after fields
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-    }
 
     @FindBy(css = "#username")
     private WebElement loginen;
@@ -28,6 +23,16 @@ public class LoginPage {
 
     @FindBy(css = "")
     private ElementsCollection language;
+
+    @FindBy(css = "a[title='Выход [ IVakidov ]']")
+
+    private WebElement buttonExit;
+
+    private WebDriver driver;
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     @Step("Login in application")
     public void loginIn(Credentials creds) {
@@ -48,11 +53,7 @@ public class LoginPage {
         button.click();
     }
 
-    //todo move up
-    @FindBy(css = "a[title='Выход [ IVakidov ]']")
-    private WebElement buttonExit;
-
     public void checkButtonExit(String text) {
-        Assert.assertEquals(buttonExit.getText(), text);
+        assertEquals(buttonExit.getText(), text);
     }
 }
