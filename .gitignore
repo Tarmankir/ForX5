@@ -1,4 +1,4 @@
-Firstpageobj.eml
-.idea/
+*.eml
+.idea
 build/
 target/

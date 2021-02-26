@@ -1,5 +1,6 @@
 package settings;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -9,8 +10,7 @@ public final class Config {
 
     static {
         try {
-            ClassLoader loader = Thread.currentThread().getContextClassLoader();
-            properties.load(loader.getResourceAsStream("src/main/resources/config.properties"));
+            properties.load(new FileInputStream("src/main/resources/config.properties"));
         } catch (IOException e) {
             throw new ExceptionInInitializerError(e);
         }
