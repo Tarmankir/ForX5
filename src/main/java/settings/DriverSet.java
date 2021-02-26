@@ -1,15 +1,17 @@
 package settings;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import org.testng.annotations.BeforeMethod;
+import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.BeforeClass;
 
 public abstract class DriverSet {
 
-    //todo why chromedrivermanager?
-    //todo why beforemethod?
-    //todo add browser settings: added resolution settings, headless
-    @BeforeMethod
+    @BeforeClass
     public void beforeClass() {
-        ChromeDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("window-size=1280x768");
+        FirefoxDriverManager.firefoxdriver().setup();
    }
 }

@@ -1,18 +1,19 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
-import org.openqa.selenium.By;
-import org.testng.annotations.Test;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import com.codeborne.selenide.SelenideElement;
+import enums.Credentials;
+import io.qameta.allure.Step;
+import org.openqa.selenium.support.FindBy;
 
 public class SelenideUse {
 
-    //todo why test in main/java? move to src/test
-    @Test
-    void selenideUse() {
-        open("https://forum.awd.ru/");
-        $(By.cssSelector("#site-description > h1 > a")).shouldHave(Condition.text("Форум Винского"));
+    @FindBy(css = "#username")
+    private SelenideElement loginen;
+
+    @FindBy(css = "#password")
+    private SelenideElement passen;
+
+    @FindBy(css = ".button1")
+    private SelenideElement button;
+
     }
-}
